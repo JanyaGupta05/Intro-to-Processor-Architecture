@@ -41,9 +41,27 @@ decodemodule call(.clk(clk), .rA(rA), .rB(rB), .icode(icode),
 
 
 always #10 clk= ~clk;
-
+initial
+begin
+    rax=4'd0;
+    rcx=4'd1;
+    rdx=4'd2;
+    rbx=4'd3;
+    rsp=4'd4;
+    rbp=4'd5;
+    rsi=4'd6;
+    rdi=4'd7;
+    r8=4'd8;
+    r9=4'd9;
+    r10=4'd10;
+    r11=4'd11;
+    r12=4'd12;
+    r13=4'd13;
+    r14=4'd14;
+end
 initial begin
   clk=0;
+ 
   icode= 4'b0000; rA= 4'd0; rB= 4'd0; 
   #20 
   icode= 4'b0010; rA= 4'd1; rB= 4'd8;

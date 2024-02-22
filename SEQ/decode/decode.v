@@ -34,6 +34,7 @@ module decodemodule(input wire clk, input [3:0] rA, input [3:0] rB, input [3:0] 
     // parameter r13= 4'd13;
     // parameter r14= 4'd14;
 
+
     always @* begin
       
       register_file[0]= rax;
@@ -64,7 +65,7 @@ module decodemodule(input wire clk, input [3:0] rA, input [3:0] rB, input [3:0] 
       else if(icode== 4'b0100)
       begin
         valA= register_file[rA];
-        
+        valB= register_file[rB];
       end
       else if(icode== 4'b0101)
       begin
