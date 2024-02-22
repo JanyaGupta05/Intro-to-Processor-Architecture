@@ -18,7 +18,10 @@ execute execute(clk,icode,ifun,ValA,ValB,ValC,ValE,cnd,zf,sf,of);
 
 initial
 begin
+
 clk=0;
+$dumpfile("exec_tb.vcd");
+$dumpvars(0,testbench);
 icode=4'b0110;//sub
 ifun=4'b0001;
 ValA= 64'd91;
