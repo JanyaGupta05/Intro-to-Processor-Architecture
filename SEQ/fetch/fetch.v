@@ -6,13 +6,13 @@ module fetchmodule(input wire clk, input [63:0] pc,
     reg [0:79] instruction;
     initial 
     begin
-        $readmemb("1.txt", instruction_memory);
+        $readmemb("rmmr.txt", instruction_memory);
         hlt=0;
         adr_address=0;
         ins_address=0;
     end
 
-    always @* 
+    always @(posedge clk) 
     begin
      
      instruction= {instruction_memory[pc],instruction_memory[pc+1],instruction_memory[pc+2],instruction_memory[pc+3],instruction_memory[pc+4],instruction_memory[pc+5],instruction_memory[pc+6],instruction_memory[pc+7],instruction_memory[pc+8],instruction_memory[pc+9]};
@@ -22,7 +22,7 @@ module fetchmodule(input wire clk, input [63:0] pc,
 
      
 
-     if(pc>50)
+     if(pc>120)
      begin
         adr_address=1;
      end
