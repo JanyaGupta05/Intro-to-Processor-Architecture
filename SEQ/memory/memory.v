@@ -2,7 +2,14 @@ module memory(input wire clk, input [3:0] icode ,input [63:0] ValA , input [63:0
 
 reg[63:0] mem[0:8192];
 
-always @(posedge clk)
+always @(negedge clk)
+begin
+    if(icode==4'b1001)
+    begin
+      ValM=mem[ValA];
+    end
+end
+always @(*)
 begin 
     adr_memory=0;
     if(ValE>8192)
@@ -23,14 +30,24 @@ begin
     begin
         mem[ValE] = ValP;
     end
-    if (icode==4'b1001)
-    begin
+     if (icode==4'b1001)
+     begin
+        if(ValA>8192)
+        begin
+          adr_memory=1;
+        end
+     end
+     if(icode==4'b1011)
+     begin
+       if(ValA>8192)
+        begin
+          adr_memory=1;
+        end
+       else
+       begin
         ValM = mem[ValA];
-    end
-    if (icode==4'b1011)
-    begin
-        ValM = mem[ValA];
-    end
+        end
+     end
     if (icode==4'b1010)
     begin
         mem[ValE] = ValA;
