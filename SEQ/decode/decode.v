@@ -35,7 +35,7 @@ module decodemodule(input wire clk, input [3:0] rA, input [3:0] rB, input [3:0] 
     // parameter r14= 4'd14;
 
 
-    always @* begin
+    always @(*) begin
       
       register_file[0]= rax;
       register_file[1]= rcx;
