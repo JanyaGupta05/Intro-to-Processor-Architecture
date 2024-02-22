@@ -8,6 +8,18 @@ begin
     begin
       ValM=mem[ValA];
     end
+        if (icode==4'b1010)
+    begin
+        mem[ValE] = ValA;
+    end
+        if (icode==4'b1000)
+    begin
+        mem[ValE] = ValP;
+    end
+        if (icode==4'b0100)
+    begin
+        mem[ValE] = ValA;
+    end
 end
 always @(*)
 begin 
@@ -18,40 +30,34 @@ begin
     end
     else
     begin
-    if (icode==4'b0100)
-    begin
-        mem[ValE] = ValA;
-    end
+    // if (icode==4'b0100)
+    // begin
+    //     mem[ValE] = ValA;
+    // end
     if (icode==4'b0101)
     begin
         ValM = mem[ValE];
     end
-    if (icode==4'b1000)
+    // if (icode==4'b1000)
+    // begin
+    //     mem[ValE] = ValP;
+    // end
+    // if (icode==4'b1001)
+    // begin
+    //     ValM = mem[ValA];
+    // end
+    if (icode==4'b1011)
     begin
-        mem[ValE] = ValP;
-    end
-     if (icode==4'b1001)
-     begin
-        if(ValA>8192)
-        begin
-          adr_memory=1;
-        end
-     end
-     if(icode==4'b1011)
-     begin
-       if(ValA>8192)
-        begin
-          adr_memory=1;
-        end
-       else
-       begin
         ValM = mem[ValA];
-        end
-     end
-    if (icode==4'b1010)
-    begin
-        mem[ValE] = ValA;
     end
+    // if (icode==4'b1010)
+    // begin
+    //     mem[ValE] = ValA;
+    // end
+    //     if(icode==4'b1001)
+    // begin
+    //   ValM=mem[ValA];
+    // end
     data = mem[ValE];
 end 
 end
