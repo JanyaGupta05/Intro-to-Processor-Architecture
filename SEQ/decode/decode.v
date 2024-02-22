@@ -1,38 +1,38 @@
 module decodemodule(input wire clk, input [3:0] rA, input [3:0] rB, input [3:0] icode, 
-    // input [63:0] rax,
-    // input [63:0] rcx,
-    // input [63:0] rdx,
-    // input [63:0] rbx,
-    // input [63:0] rsp,
-    // input [63:0] rbp,
-    // input [63:0] rsi,
-    // input [63:0] rdi,
-    // input [63:0] r8,
-    // input [63:0] r9,
-    // input [63:0] r10,
-    // input [63:0] r11,
-    // input [63:0] r12,
-    // input [63:0] r13,
-    // input [63:0] r14,
+    input [63:0] rax,
+    input [63:0] rcx,
+    input [63:0] rdx,
+    input [63:0] rbx,
+    input [63:0] rsp,
+    input [63:0] rbp,
+    input [63:0] rsi,
+    input [63:0] rdi,
+    input [63:0] r8,
+    input [63:0] r9,
+    input [63:0] r10,
+    input [63:0] r11,
+    input [63:0] r12,
+    input [63:0] r13,
+    input [63:0] r14,
     output reg[63:0] valA,
     output reg[63:0] valB);
 
     reg[63:0] register_file [0:14];
-    parameter rax= 4'd0;
-    parameter rcx= 4'd1;
-    parameter rdx= 4'd2;
-    parameter rbx= 4'd3;
-    parameter rsp= 4'd4;
-    parameter rbp= 4'd5;
-    parameter rsi= 4'd6;
-    parameter rdi= 4'd7;
-    parameter r8= 4'd8;
-    parameter r9= 4'd0;
-    parameter r10= 4'd10;
-    parameter r11= 4'd11;
-    parameter r12= 4'd12;
-    parameter r13= 4'd13;
-    parameter r14= 4'd14;
+    // parameter rax= 4'd0;
+    // parameter rcx= 4'd1;
+    // parameter rdx= 4'd2;
+    // parameter rbx= 4'd3;
+    // parameter rsp= 4'd4;
+    // parameter rbp= 4'd5;
+    // parameter rsi= 4'd6;
+    // parameter rdi= 4'd7;
+    // parameter r8= 4'd8;
+    // parameter r9= 4'd0;
+    // parameter r10= 4'd10;
+    // parameter r11= 4'd11;
+    // parameter r12= 4'd12;
+    // parameter r13= 4'd13;
+    // parameter r14= 4'd14;
 
     always @* begin
       

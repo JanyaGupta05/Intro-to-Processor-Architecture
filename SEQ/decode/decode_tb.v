@@ -2,40 +2,40 @@
 module decode_tb_module;
     
     reg clk; reg[3:0] rA; reg[3:0] rB; reg[3:0] icode; 
-    // reg[63:0] rax;
-    // reg[63:0] rcx;
-    // reg[63:0] rdx;
-    // reg[63:0] rbx;
-    // reg[63:0] rsp;
-    // reg[63:0] rbp;
-    // reg[63:0] rsi;
-    // reg[63:0] rdi;
-    // reg[63:0] r8;
-    // reg[63:0] r9;
-    // reg[63:0] r10;
-    // reg[63:0] r11;
-    // reg[63:0] r12;
-    // reg[63:0] r13;
-    // reg[63:0] r14;
+    reg[63:0] rax;
+    reg[63:0] rcx;
+    reg[63:0] rdx;
+    reg[63:0] rbx;
+    reg[63:0] rsp;
+    reg[63:0] rbp;
+    reg[63:0] rsi;
+    reg[63:0] rdi;
+    reg[63:0] r8;
+    reg[63:0] r9;
+    reg[63:0] r10;
+    reg[63:0] r11;
+    reg[63:0] r12;
+    reg[63:0] r13;
+    reg[63:0] r14;
     wire[63:0] valA;
     wire[63:0] valB;
 
 decodemodule call(.clk(clk), .rA(rA), .rB(rB), .icode(icode), 
-    // .rax(rax),
-    // .rcx(rcx),
-    // .rdx(rdx),
-    // .rbx(rbx),
-    // .rsp(rsp),
-    // .rbp(rbp),
-    // .rsi(rsi),
-    // .rdi(rdi),
-    // .r8(r8),
-    // .r9(r9),
-    // .r10(r10),
-    // .r11(r11),
-    // .r12(r12),
-    // .r13(r13),
-    // .r14(r14),
+    .rax(rax),
+    .rcx(rcx),
+    .rdx(rdx),
+    .rbx(rbx),
+    .rsp(rsp),
+    .rbp(rbp),
+    .rsi(rsi),
+    .rdi(rdi),
+    .r8(r8),
+    .r9(r9),
+    .r10(r10),
+    .r11(r11),
+    .r12(r12),
+    .r13(r13),
+    .r14(r14),
     .valA(valA),
     .valB(valB));
 
