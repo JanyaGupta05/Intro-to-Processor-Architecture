@@ -28,6 +28,7 @@ fetchmodule call(
 );
 
 initial begin
+    
     clk=1;  
     pc=0;
     #10
